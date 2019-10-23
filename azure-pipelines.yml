@@ -22,7 +22,6 @@ jobs:
   - script: ./conda/bin/conda install -y constructor
     displayName: 'Install constructor'
 
-  - script: |
-    ./conda/bin/constructor edaconda
+  - script: ./conda/bin/constructor edaconda
     displayName: 'Building Edaconda'
 
