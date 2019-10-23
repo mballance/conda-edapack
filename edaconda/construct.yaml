@@ -1,0 +1,24 @@
+name: Edaconda
+version: 0.0.1
+install_in_dependency_order: True
+
+channels:
+ - http://repo.anaconda.com/pkgs/main
+ - http://conda.anaconda.org/timvideos
+
+conda_default_channels:
+ - http://repo.anaconda.com/pkgs/main
+ - http://conda.anaconda.org/timvideos
+
+
+specs:
+
+  - python 
+  - conda
+  - verilator
+  - iverilog
+  - icestorm
+  - iceprog
+  - arachne-pnr
+
+
