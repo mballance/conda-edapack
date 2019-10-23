@@ -17,7 +17,7 @@ jobs:
 
   - script: |
       chmod +x Miniconda3-latest-Linux-x86_64.sh
-      ./Miniconda3-latest-Linux-x86_64.sh -b -prefix `pwd`/conda
+      ./Miniconda3-latest-Linux-x86_64.sh -b -p `pwd`/conda
     displayName: 'Install Miniconda'
   - script: ./conda/bin/conda install -y constructor
     displayName: 'Install constructor'
