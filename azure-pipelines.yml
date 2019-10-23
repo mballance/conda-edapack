@@ -1,0 +1,24 @@
+trigger:
+- master
+
+variables:
+  CCACHE_DIR: $(Pipeline.Workspace)/ccache
+
+jobs:
+- job: Linux
+  pool:
+   vmImage: 'ubuntu-16.04'
+  steps:
+  - script: sudo apt-get install wget git -y
+    displayName: 'Install wget'
+
+  - script: wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
+    displayName: 'Download Conda'
+
+  - script: |
+      chmod +x Miniconda3-latest-Linux-x86_64.sh
+      ./Miniconda-latest-Linux-x86_64.sh -b -prefix `pwd`/conda
+    displayName: 'Install Miniconda'
+  - script: ./conda/bin/conda install -y constructor
+    displayName: 'Install constructor'
+
