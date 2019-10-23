@@ -23,6 +23,6 @@ jobs:
     displayName: 'Install constructor'
 
   - script: |
-    `pwd`/conda/bin/constructor edaconda
+    ./conda/bin/constructor edaconda
     displayName: 'Building Edaconda'
 
