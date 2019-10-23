@@ -24,12 +24,13 @@ jobs:
 
   - script: ./conda/bin/constructor edaconda
     displayName: 'Building Edaconda'
-- task: GithubRelease@0 
-  displayName: 'Create GitHub Release'      
-  inputs:
-    gitHubConnection: mballance
-    repositoryName: mballance/edaconda
-    tagSource: manual
-    tag: $(Build.BuildNumber)
-    assets: |
+
+  - task: GithubRelease@0 
+    displayName: 'Create GitHub Release'      
+    inputs:
+      gitHubConnection: mballance
+      repositoryName: mballance/edaconda
+      tagSource: manual
+      tag: $(Build.BuildNumber)
+      assets: |
          $(Build.ArtifactStagingDirectory)/Edaconda*.sh
